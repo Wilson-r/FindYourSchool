@@ -5,3 +5,15 @@
    width: 100%;
 
 }
+
+.card {
+   margin: 5% auto; 
+   float: none; 
+   margin-bottom: 10px; 
+}
+
+.card2 {
+   margin: 0 auto; 
+   float: none; 
+   margin-bottom: 10px; 
+}
