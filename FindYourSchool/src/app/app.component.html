@@ -30,9 +30,7 @@
                 <div class="col-lg-8 col-md-10" style="position: absolute; top: 135px; text-align: center;">
                 <div class="hero_content text-left">
                     <h2 class="hero_title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Trova la tua scuola</h2>
-                    <button type="button" class="btn btn-danger" (click) = onTabClick(0)>Comincia a cercare</button>
-                    <div><app-ricerca-scuola  *ngIf="tabIndex === 0"></app-ricerca-scuola></div>
-                    
+                    <button type="button" class="btn btn-danger" (click) = "functionOnWhichRedirectShouldHappen()">Comincia a cercare</button>
                 </div> 
             </div>
         </div> 
@@ -113,4 +111,8 @@
       <a class="text-white">Powered by MoWi Corporation</a>
     </div>
     <!-- Copyright -->
+
+    
   </footer>
+
+  <router-outlet></router-outlet>
