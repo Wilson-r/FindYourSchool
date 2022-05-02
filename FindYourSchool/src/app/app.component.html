@@ -27,18 +27,18 @@
     <div class="single_hero bg_cover d-flex align-items-left">
         <div class="container">
             <div class="row justify-content-left">
-                <div class="col-lg-8 col-md-10" style="position: absolute; top: 135px;">
+                <div class="col-lg-8 col-md-10" style="position: absolute; top: 135px; text-align: center;">
                 <div class="hero_content text-left">
                     <h2 class="hero_title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Trova la tua scuola</h2>
-                    <button type="button" class="btn btn-danger">Comincia a cercare</button>
+                    <button type="button" class="btn btn-danger" (click) = onTabClick(0)>Comincia a cercare</button>
+                    <div><app-ricerca-scuola  *ngIf="tabIndex === 0"></app-ricerca-scuola></div>
+                    
                 </div> 
             </div>
         </div> 
         </div> 
     </div> 
 </div> 
-
-
 
 
 <div class="row">
