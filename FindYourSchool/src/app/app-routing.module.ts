@@ -2,10 +2,13 @@ import { AppComponent } from './app.component';
 import { NgModule, OnInit }             from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { RicercaScuolaComponent } from './ricerca-scuola/ricerca-scuola.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/AppComponent', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   { path: 'ricerca', component: RicercaScuolaComponent },
+  
+
 
 ];
 
