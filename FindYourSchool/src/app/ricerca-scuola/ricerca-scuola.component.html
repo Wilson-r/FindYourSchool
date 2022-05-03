@@ -1,1 +1,63 @@
-<p>work in progress</p>
+<div class = "container">
+    <div class = "row">
+      <div class = "md-col-12"> Add User</div>
+    </div>
+<form [formGroup] = "angForm" (ngSubmit) = "postdata(angForm)" autocomplete="off">
+    <div class = "row">
+        <div class = "col-md-6"> User Name</div>
+        <div class = "col-md-6"> <input type="text" class = "form-control" name = "user" formControlName = "user"> </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6"> informatica da uno a dieci</div>
+        <div class = "col-md-6"> <input type="number" class = "form-control" name = "informatica" formControlName = "informatica"> </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6"> matematica da uno a dieci</div>
+        <div class = "col-md-6"> <input type="number" class = "form-control" name = "matematica" formControlName = "matematica"> </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6"> arte da uno a dieci</div>
+        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6"> Science da uno a dieci</div>
+        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6"> Geometria da uno a dieci</div>
+        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6"> da uno a dieci quanto sei bravo nel problem solving</div>
+        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6"> da uno a dieci  quanto sei bravo nella memorizzazione </div>
+        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6"> da uno a dieci quanto sei bravo negli sport</div>
+        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6"> da uno a dieci quanto sei bravo con le tecnologie</div>
+        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6"> da uno a dieci quanto sei bravo nelle lingue</div>
+        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6"> da uno a dieci quanto ti piace interagire con le persone</div>
+        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6"> da uno a dieci quanto ti piace studiare</div>
+        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6"> submit</div>
+        <div class = "col-md-6"> <input type="submit" class = "form-control" name = "submit"> </div>
+    </div>
+<h1>dal risultato del tuo questionario ti consigliamo</h1>
+<h1>di andare alla scuola {{newData | json}} </h1>

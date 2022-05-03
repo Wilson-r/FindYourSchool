@@ -14,8 +14,5 @@ export class AppComponent {
 
   }
 
-  functionOnWhichRedirectShouldHappen(){
-    this.router.navigate(['/ricerca']);
-}
 
 }
