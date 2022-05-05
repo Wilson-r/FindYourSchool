@@ -70,7 +70,6 @@ class UsersRecommendation(Resource):
         informatica = request.json["informatica"]
         matematica = request.json["matematica"]
         arte = request.json["arte"]
-        problemSolving = request.json['ProblemSolving']
         if user and informatica and matematica and arte:
             id = mongo.db.Prova1.insert_one(
                 {
@@ -78,7 +77,6 @@ class UsersRecommendation(Resource):
                 'informatica': informatica,
                 'matematica': matematica,
                 'arte': arte,
-                'ProblemSolving' : problemSolving
                 }
             )
             resp = {
@@ -87,7 +85,6 @@ class UsersRecommendation(Resource):
                 'informatica': informatica,
                 'matematica': matematica,
                 'arte': arte ,
-                'ProblemSolving' : problemSolving
             }
             userdata = pd.DataFrame(data=resp, index=[0])
             result = mongo.db.tabella.find()

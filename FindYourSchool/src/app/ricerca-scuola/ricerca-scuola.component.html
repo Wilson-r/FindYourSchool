@@ -1,63 +1,86 @@
+&nbsp;
 <div class = "container">
     <div class = "row">
-      <div class = "md-col-12"> Add User</div>
+      <div class = "md-col-12 text-center fs-1">Completa il questonario dando una valutazione alle materie da 1 a 10</div>
     </div>
+    &nbsp;
 <form [formGroup] = "angForm" (ngSubmit) = "postdata(angForm)" autocomplete="off">
     <div class = "row">
-        <div class = "col-md-6"> User Name</div>
+        <div class = "col-md-6"> <p class ="fw-bold" >User name</p></div>
         <div class = "col-md-6"> <input type="text" class = "form-control" name = "user" formControlName = "user"> </div>
     </div>
     <div class = "row">
-        <div class = "col-md-6"> informatica da uno a dieci</div>
+        <div class = "col-md-6 "> <p class ="fw-bold">Informatica da 1 a 10</p></div>
         <div class = "col-md-6"> <input type="number" class = "form-control" name = "informatica" formControlName = "informatica"> </div>
     </div>
     <div class = "row">
-        <div class = "col-md-6"> matematica da uno a dieci</div>
+        <div class = "col-md-6"><p class ="fw-bold">Matematica da 1 a 10</p> </div>
         <div class = "col-md-6"> <input type="number" class = "form-control" name = "matematica" formControlName = "matematica"> </div>
     </div>
     <div class = "row">
-        <div class = "col-md-6"> arte da uno a dieci</div>
+        <div class = "col-md-6"><p class ="fw-bold">Arte da 1 a 10</p> </div>
         <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
     </div>
     <div class = "row">
-        <div class = "col-md-6"> Science da uno a dieci</div>
-        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
-    </div>
-    <div class = "row">
-        <div class = "col-md-6"> Geometria da uno a dieci</div>
-        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
-    </div>
-    <div class = "row">
-        <div class = "col-md-6"> da uno a dieci quanto sei bravo nel problem solving</div>
-        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
-    </div>
-    <div class = "row">
-        <div class = "col-md-6"> da uno a dieci  quanto sei bravo nella memorizzazione </div>
-        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
-    </div>
-    <div class = "row">
-        <div class = "col-md-6"> da uno a dieci quanto sei bravo negli sport</div>
-        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
-    </div>
-    <div class = "row">
-        <div class = "col-md-6"> da uno a dieci quanto sei bravo con le tecnologie</div>
-        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
-    </div>
-    <div class = "row">
-        <div class = "col-md-6"> da uno a dieci quanto sei bravo nelle lingue</div>
-        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
-    </div>
-    <div class = "row">
-        <div class = "col-md-6"> da uno a dieci quanto ti piace interagire con le persone</div>
-        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
-    </div>
-    <div class = "row">
-        <div class = "col-md-6"> da uno a dieci quanto ti piace studiare</div>
-        <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
-    </div>
-    <div class = "row">
-        <div class = "col-md-6"> submit</div>
+        <div class = "col-md-6"><p class ="fw-bold" style="font-weight: bold; color: rgb(211, 62, 62);">SUBMIT</p></div>
         <div class = "col-md-6"> <input type="submit" class = "form-control" name = "submit"> </div>
     </div>
-<h1>dal risultato del tuo questionario ti consigliamo</h1>
-<h1>di andare alla scuola {{newData | json}} </h1>
+</form>
+
+<div class = "row">
+    <div class = "md-col-12 text-center fs-1">
+    &nbsp;
+    <h1>Dopo l'analisi del tuo questionario, siamo arrivati alla conclusione {{newData | json}} </h1>
+</div>
+    
+  </div>
+
+</div>
+
+<!----
+<footer class="footer bg-dark text-center text-white">
+    <div class="container">
+      <section class="">
+        <form action="">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-12">
+              <p class="pt-2">
+                <strong>Siamo in continuo sviluppo, aiutaci dandoci i tuoi consigli</strong>
+              </p>
+            </div>
+            <div class="col-md-6 col-12">
+              <div class="form-outline form-white mb-4">
+                <input type="email" id="form5Example21" class="form-control" />
+              </div>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-outline-light mb-4">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+  
+      <section class="mb-4">
+        <p style="text-align: center; ">
+            I contenuti presenti su questo sito sono di proprietà della MoWi Corporation.
+  
+            Non possono essere copiati, riprodotti, pubblicati o redistribuiti perché appartenenti all'autore stesso, se non dopo autorizzazione affermativa scritta alla richiesta di utilizzo.
+            
+            E’ vietata la copia e la riproduzione dei contenuti in qualsiasi modo o forma
+            
+            Legge 248/00 e modifica legge 633/41
+            <p >Tutti i diritti sono riservati &nbsp;</p>
+        
+      </section>
+    </div>
+  
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white">Powered by MoWi Corporation</a>
+    </div>
+  </footer>
+-->
+
+
