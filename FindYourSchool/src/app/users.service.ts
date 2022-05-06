@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {Users} from './users.model';
 import { map } from 'rxjs/operators';
-//import {GeolocationService} from '@ng-web-apis/geolocation';
 
 
 @Injectable({
@@ -10,12 +9,12 @@ import { map } from 'rxjs/operators';
 })
 export class UsersService {
 
-  baseUrl : string = "https://5000-wilsonr-findyourschool-orjz5w6d5ov.ws-eu44.gitpod.io/"
+  baseUrl : string = "https://5000-wilsonr-findyourschool-yfmwxcluqqj.ws-eu44.gitpod.io/"
 
   constructor(private http :HttpClient) { }
 
   getData(){
-    let url = "https://5000-wilsonr-findyourschool-orjz5w6d5ov.ws-eu44.gitpod.io/";
+    let url = "https://5000-wilsonr-findyourschool-yfmwxcluqqj.ws-eu44.gitpod.io/";
     return this.http.get(url +"users");
   }
 

@@ -9,5 +9,7 @@ pip install -r requirements.txt && flask run
 - npm i -g @angular/cli
 - npm update
 - ng serve --disable-host-check
+- npm install leaflet@1.7.1
+- npm i --save-dev @types/leaflet`
 
 npm i -g @angular/cli && npm update && ng serve --disable-host-check

@@ -3,7 +3,7 @@ from flask_restful import Resource , Api ,reqparse
 from flask_cors import CORS
 from bson import json_util
 import pandas as pd
-import folium
+
 import rec
 
 from flask_pymongo import PyMongo
@@ -93,15 +93,5 @@ class UsersRecommendation(Resource):
 
 api.add_resource(UsersRecommendation, '/usersRec')
 
-class ScuolaMap(Resource):
-    def __init__(self):
-        pass
-    def get(self):
-        start_coords = (46.9540700, 142.7360300)
-        folium_map = folium.Map(location=start_coords, zoom_start=14)
-        headers = {'Content-Type': 'text/html'}
-        return folium_map._repr_html_()
-
-api.add_resource(ScuolaMap, '/ScuolaMap')
 if __name__ == '__main__':
     app.run()

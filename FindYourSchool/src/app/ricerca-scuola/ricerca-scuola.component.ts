@@ -17,6 +17,7 @@ export class RicercaScuolaComponent implements OnInit {
 
   angForm: FormGroup;
   constructor(
+    private router: Router,
     private fb : FormBuilder,
     private route: Router,
     private usersService: UsersService
@@ -47,7 +48,9 @@ export class RicercaScuolaComponent implements OnInit {
       });
 
   }
-
+  functionOnWhichRedirectShouldHappen(){
+    this.router.navigate(['/mappa']);
+}
   getLocation(){
     this.usersService.getPosition().then(resp => {
       this.longitude = resp.lng;
