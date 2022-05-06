@@ -14,7 +14,38 @@
     margin-top: 5px;
  }
  
- 
- 
- 
- 
+ .banner{
+    background-image: url("../../assets/img/newpic.jpg");
+    width:760px;
+    height:608px;
+    background-position: right;
+    float:right;
+    
+ }
+
+.id1{
+   width:530px;
+   height:608px;
+   background-position: left;
+   float:left;
+}
+.id1 h1{
+   color : #dc3545;
+   font-size: 50px;
+   font-weight: bold;
+   top : 30%;
+   left : 10%;
+   width: 50%; 
+   position: absolute;
+   float:left;
+
+}
+.id1 button{
+   font-size: 50px;
+   font-weight: bold;
+   top : 45%;
+   left : 10%;
+   position: absolute;
+   float:left;
+
+}
