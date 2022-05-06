@@ -7,23 +7,26 @@
       &nbsp;
   <form [formGroup] = "angForm" (ngSubmit) = "postdata(angForm)" autocomplete="off">
       <div class = "row">
-          <div class = "col-md-6 fs-4"> <p class ="fw-bold fst-italic" >User name</p></div>
-          <div class = "col-md-6"> <input type="text" class = "form-control" name = "user" formControlName = "user"> </div>
+          <div class = "col-md-6 fs-4"> <p class ="fw-bold fst-italic" id="validationCustom01" placeholder="First name" value="Mark" required>User name </p></div>
+          <div class = "col-md-6"> <input type="text" class = "form-control" name = "user" formControlName = "user" placeholder="inserisci un valore"> </div>
       </div>
       <div class = "row">
           <div class = "col-md-6 fs-4 "> <p class ="fw-bold fst-italic">Informatica da 1 a 10</p></div>
-          <div class = "col-md-6"> <input type="number" class = "form-control" name = "informatica" formControlName = "informatica"> </div>
+          <div class = "col-md-6"> <input type="number" class = "form-control" name = "informatica" formControlName = "informatica" placeholder="inserisci un valore"> </div>
       </div>
       <div class = "row">
           <div class = "col-md-6 fs-4"><p class ="fw-bold fst-italic">Matematica da 1 a 10</p> </div>
-          <div class = "col-md-6"> <input type="number" class = "form-control" name = "matematica" formControlName = "matematica"> </div>
+          <div class = "col-md-6"> <input type="number" class = "form-control" name = "matematica" formControlName = "matematica" placeholder="inserisci un valore"> </div>
       </div>
       <div class = "row">
           <div class = "col-md-6 fs-4"><p class ="fw-bold fst-italic">Arte da 1 a 10</p> </div>
-          <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte"> </div>
+          <div class = "col-md-6"> <input type="number" class = "form-control" name = "arte" formControlName = "arte" placeholder="inserisci un valore"> </div>
       </div>
+      <br><br>
       <div class = "row">
-          <div class = "col-md-12"> <input type="submit" class = "form-control" name = "submit"> </div>
+        
+          <div class = "col-6 mx-auto"> <button type="submit" class = "form-control btn btn-danger" name = "submit">Invia</button> </div>
+          
       </div>
   </form>
 
@@ -36,6 +39,27 @@
     </div>
 
   </div>
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
 
   <!----
   <footer class="footer bg-dark text-center text-white">
