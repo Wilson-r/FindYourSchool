@@ -3,6 +3,7 @@ import pandas as pd
 def recommend(schoolProfile,userdata):
     tab = pd.DataFrame(list(schoolProfile))
     userdata = userdata.drop('user',axis= 1)
+    tab["idScuola"] = tab["idScuola"].sort_values(ascending=True).values
     userProfile = userdata.transpose()
     userProfile = userProfile.iloc[1: , :]
     userProfile = userProfile.squeeze()

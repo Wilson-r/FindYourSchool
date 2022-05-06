@@ -10,12 +10,12 @@ import { map } from 'rxjs/operators';
 })
 export class UsersService {
 
-  baseUrl : string = "https://5000-wilsonr-findyourschool-kl48s5go93j.ws-eu43.gitpod.io/"
+  baseUrl : string = "https://5000-wilsonr-findyourschool-11xgh1ycte1.ws-eu44.gitpod.io/"
 
   constructor(private http :HttpClient) { }
 
   getData(){
-    let url = "https://5000-wilsonr-findyourschool-kl48s5go93j.ws-eu43.gitpod.io/";
+    let url = "https://5000-wilsonr-findyourschool-11xgh1ycte1.ws-eu44.gitpod.io/";
     return this.http.get(url +"users");
   }
 
