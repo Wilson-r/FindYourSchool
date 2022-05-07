@@ -1,16 +1,14 @@
 .footer{
-   position: fixed;
+   position: relative;
    left: 0;
    bottom: 0;
    width: 100%;
-
+   margin-top: 10%;
 }
 
 .card{
    margin: auto;
    margin-top: 50%;
 }
-
-
 
 
