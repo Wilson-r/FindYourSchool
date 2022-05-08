@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersService } from './users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MapComponent } from './map/map.component';
+import { MarkerSService } from './marker-s.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { MapComponent } from './map/map.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [UsersService],
+  providers: [UsersService,MarkerSService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
