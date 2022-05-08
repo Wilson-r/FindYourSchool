@@ -6,12 +6,17 @@ import * as L from 'leaflet';
   providedIn: 'root'
 })
 export class MarkerSService {
-  capitals: string = '/assets/data/usa-capitals.geojson';
-  private map : any;
-  constructor(private http: HttpClient) { }
+  baseUrl : string = "https://5000-wilsonr-findyourschool-r4391zl5nj1.ws-eu44.gitpod.io/scuole"
+
+
+  constructor(private http: HttpClient) { 
+    
+  }
+
+
   makeCapitalMarkers(map: L.Map): void {
-    this.http.get(this.capitals).subscribe((res: any) => {
-      for (const c of res.features) {
+    this.http.get(this.baseUrl).subscribe((res: any) => {
+      for (const c of res) {
         const lon = c.geometry.coordinates[0];
         const lat = c.geometry.coordinates[1];
         const marker = L.marker([lat, lon]);

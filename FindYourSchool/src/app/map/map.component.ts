@@ -1,5 +1,6 @@
 import { Component, AfterViewInit  } from '@angular/core';
 import * as L from 'leaflet';
+import { MarkerSService } from '../marker-s.service';
 
 @Component({
   selector: 'app-map',
@@ -25,9 +26,13 @@ export class MapComponent implements AfterViewInit  {
 
   L.marker([45.5373529,9.2657862]).addTo(this.map)
 }
-  constructor() { }
+
+  constructor(private markerService: MarkerSService) { }
+
+
   ngAfterViewInit(): void {
     this.initMap();
+    this.markerService.makeCapitalMarkers(this.map);
   }
 
 }

@@ -93,5 +93,19 @@ class UsersRecommendation(Resource):
 
 api.add_resource(UsersRecommendation, '/usersRec')
 
+class SchoolsApi(Resource):
+    def get(self):
+        points = []
+        for address in mongo.db.GeoScuole.find({'geometry.type': 'Point'}):
+            points.append({
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": address['geometry']['coordinates']
+                },
+                "type": "Feature"
+            })
+        return jsonify(points)
+
+api.add_resource(SchoolsApi, '/scuole')
 if __name__ == '__main__':
     app.run()
