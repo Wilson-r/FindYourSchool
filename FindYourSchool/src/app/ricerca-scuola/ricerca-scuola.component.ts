@@ -48,9 +48,6 @@ export class RicercaScuolaComponent implements OnInit {
       });
 
   }
-  functionOnWhichRedirectShouldHappen(){
-    this.router.navigate(['/mappa']);
-}
   getLocation(){
     this.usersService.getPosition().then(resp => {
       this.longitude = resp.lng;
