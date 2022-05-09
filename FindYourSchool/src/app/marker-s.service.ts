@@ -6,7 +6,7 @@ import * as L from 'leaflet';
   providedIn: 'root'
 })
 export class MarkerSService {
-  baseUrl : string = "https://5000-wilsonr-findyourschool-r4391zl5nj1.ws-eu44.gitpod.io/scuole"
+  baseUrl : string = "https://5000-wilsonr-findyourschool-pz06k3ptawn.ws-eu44.gitpod.io/scuole"
 
 
   constructor(private http: HttpClient) { 
