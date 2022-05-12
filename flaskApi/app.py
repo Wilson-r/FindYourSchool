@@ -96,7 +96,9 @@ api.add_resource(UsersRecommendation, '/usersRec')
 class SchoolsApi(Resource):
     def get(self):
         points = []
-        for address in mongo.db.GeoScuole.find({'geometry.type': 'Point'}):
+        for address in mongo.db.GeoScuole.find({},
+            { "geometry" : { "$near" : [ 9.1869571 , 45.505833 ], "$maxDistance": 1 } }
+        ):
             points.append({
                 "geometry": {
                     "type": "Point",

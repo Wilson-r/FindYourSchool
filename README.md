@@ -3,7 +3,7 @@
 - pip install -r requirements.txt
 - flask run
 
-pip install -r requirements.txt && flask run
+cd flaskApi && pip install -r requirements.txt && flask run
 
 # Comandi Angular
 - npm i -g @angular/cli
@@ -12,4 +12,4 @@ pip install -r requirements.txt && flask run
 - npm install leaflet@1.7.1
 - npm i --save-dev @types/leaflet`
 
-npm i -g @angular/cli && npm update && ng serve --disable-host-check
+cd FindYourSchool && npm i -g @angular/cli && npm update && ng serve --disable-host-check
