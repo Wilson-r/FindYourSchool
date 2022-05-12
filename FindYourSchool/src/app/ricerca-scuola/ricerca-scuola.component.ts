@@ -31,7 +31,7 @@ export class RicercaScuolaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getLocation();
+    
   }
 
 
@@ -48,12 +48,5 @@ export class RicercaScuolaComponent implements OnInit {
       });
 
   }
-  getLocation(){
-    this.usersService.getPosition().then(resp => {
-      this.longitude = resp.lng;
-      this.latitude  = resp.lat;
-      console.log(resp.lng);
-      console.log(resp.lat);
-    })
-  }
+  
 }

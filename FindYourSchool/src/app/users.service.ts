@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {Users} from './users.model';
 import { map } from 'rxjs/operators';
+import { AppSettings } from './appSettings';
 
 
 @Injectable({
@@ -9,24 +10,15 @@ import { map } from 'rxjs/operators';
 })
 export class UsersService {
 
-  baseUrl : string = "https://5000-wilsonr-findyourschool-yi6ij8jttkw.ws-eu44.gitpod.io/"
-
   constructor(private http :HttpClient) { }
 
   getData(){
-    let url = "https://5000-wilsonr-findyourschool-yi6ij8jttkw.ws-eu44.gitpod.io/";
-    return this.http.get(url +"users");
+    return this.http.get(AppSettings._API +"users");
   }
 
   public addUser(user: any,informatica: any,matematica: any,arte: any,longitude: any,latitude: any){
-    return this.http.post<any>(this.baseUrl +"usersRec",{user,informatica,matematica,arte,latitude,longitude}).pipe(map((Users: any) => {return Users}))
+    return this.http.post<any>(AppSettings._API +"usersRec",{user,informatica,matematica,arte,latitude,longitude}).pipe(map((Users: any) => {return Users}))
   }
 
-  getPosition(): Promise<any>{
-    return new Promise((resolve, reject)=> {
-      navigator.geolocation.getCurrentPosition(resp => {
-        resolve({lng : resp.coords.longitude, lat : resp.coords.latitude})
-      })
-    })
-  }
+  
 }

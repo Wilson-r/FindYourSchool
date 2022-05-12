@@ -1,8 +1,9 @@
 from flask import Flask , request, jsonify, Response,render_template, make_response
 from flask_restful import Resource , Api ,reqparse
-from flask_cors import CORS
+from flask_cors import CORS , cross_origin
 from bson import json_util
 import pandas as pd
+import pymongo
 
 import rec
 
@@ -14,7 +15,7 @@ app.config["MONGO_URI"] = "mongodb://WilsonRiccardo:Ricky2004!@cluster0-shard-00
 
 mongo = PyMongo(app)
 
-CORS(app)
+cors = CORS(app, resources= {r'*': {'origins': 'https://4200-wilsonr-findyourschool-x96mis00ha3.ws-eu44.gitpod.io'}})
 api = Api(app)
 
 
@@ -96,9 +97,19 @@ api.add_resource(UsersRecommendation, '/usersRec')
 class SchoolsApi(Resource):
     def get(self):
         points = []
-        for address in mongo.db.GeoScuole.find({},
-            { "geometry" : { "$near" : [ 9.1869571 , 45.505833 ], "$maxDistance": 1 } }
-        ):
+        mongo.db.GeoScuole.create_index( [("geometry", pymongo.GEOSPHERE )])
+        result = mongo.db.GeoScuole.find(
+            {
+                'geometry':
+                { '$near':
+                    {
+                        '$geometry': { 'type': "Point",  'coordinates': [9.1869571, 45.505833] },
+                        '$maxDistance': 1000
+                    }
+                }
+            }
+        ).limit(1)
+        for address in result:
             points.append({
                 "geometry": {
                     "type": "Point",
@@ -107,6 +118,32 @@ class SchoolsApi(Resource):
                 "type": "Feature"
             })
         return jsonify(points)
+    def post(self):
+        latitude = request.json['latitude']
+        longitude = request.json["longitude"]
+        points = []
+        mongo.db.GeoScuole.create_index( [("geometry", pymongo.GEOSPHERE )])
+        result = mongo.db.GeoScuole.find(
+            {
+                'geometry':
+                { '$near':
+                    {
+                        '$geometry': { 'type': "Point",  'coordinates': [longitude , latitude] },
+                        '$maxDistance': 100000000000000
+                    }
+                }
+            }
+        ).limit(1)
+        for address in result:
+            points.append({
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": address['geometry']['coordinates']
+                },
+                "type": "Feature"
+            })
+        return jsonify(points)
+
 
 api.add_resource(SchoolsApi, '/scuole')
 if __name__ == '__main__':
