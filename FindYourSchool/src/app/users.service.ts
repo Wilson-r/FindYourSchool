@@ -16,8 +16,8 @@ export class UsersService {
     return this.http.get(AppSettings._API +"users");
   }
 
-  public addUser(user: any,informatica: any,matematica: any,arte: any,longitude: any,latitude: any){
-    return this.http.post<any>(AppSettings._API +"usersRec",{user,informatica,matematica,arte,latitude,longitude}).pipe(map((Users: any) => {return Users}))
+  public addUser(user: any,informatica: any,matematica: any,arte: any,scienze: any,storia: any,tecnologia: any,musica: any,geografia: any,pri_inglese: any,sec_leng: any){
+    return this.http.post<any>(AppSettings._API +"usersRec",{user,informatica,matematica,arte,scienze,storia,tecnologia,musica,geografia,pri_inglese,sec_leng}).pipe(map((Users: any) => {return Users}))
   }
 
   

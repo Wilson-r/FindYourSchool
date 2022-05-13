@@ -26,7 +26,15 @@ export class RicercaScuolaComponent implements OnInit {
       user : ["", Validators.required],
       informatica: ["", Validators.required],
       matematica: ["", Validators.required],
-      arte: ["", Validators.required]
+      arte: ["", Validators.required],
+      scienze : ["", Validators.required],
+      storia : ["", Validators.required],
+      tecnologia : ["", Validators.required],
+      musica : ["", Validators.required],
+      geografia : ["", Validators.required],
+      pri_inglese : ["", Validators.required],
+      sec_leng : ["", Validators.required]
+
     })
   }
 
@@ -41,8 +49,13 @@ export class RicercaScuolaComponent implements OnInit {
       this.angForm.value.informatica,
       this.angForm.value.matematica,
       this.angForm.value.arte,
-      this.latitude ,
-      this.longitude).pipe(first()).subscribe((data: any) => {
+      this.angForm.value.scienze,
+      this.angForm.value.storia,
+      this.angForm.value.tecnologia,
+      this.angForm.value.musica,
+      this.angForm.value.geografia,
+      this.angForm.value.pri_inglese,
+      this.angForm.value.sec_leng,).pipe(first()).subscribe((data: any) => {
         this.newData = data;
         console.warn(data)
       });

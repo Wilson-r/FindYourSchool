@@ -15,7 +15,7 @@ app.config["MONGO_URI"] = "mongodb://WilsonRiccardo:Ricky2004!@cluster0-shard-00
 
 mongo = PyMongo(app)
 
-cors = CORS(app, resources= {r'*': {'origins': 'https://4200-wilsonr-findyourschool-x96mis00ha3.ws-eu44.gitpod.io'}})
+cors = CORS(app)
 api = Api(app)
 
 
@@ -31,17 +31,31 @@ class UsersApi(Resource):
         informatica = request.json["informatica"]
         matematica = request.json["matematica"]
         arte = request.json["arte"]
-        latitude = request.json['latitude']
-        longitude = request.json["longitude"]
-        if user and informatica and matematica and arte and latitude:
+        scienze = request.json["scienze"]
+        storia = request.json["storia"]
+        tecnologia = request.json["tecnologia"]
+        musica = request.json["musica"]
+        geografia = request.json["geografia"]
+        pri_inglese = request.json["pri_inglese"]
+        sec_leng = request.json["sec_leng"]
+
+        condizione = user and informatica and matematica and arte and scienze and storia and tecnologia and musica and geografia and pri_inglese and sec_leng
+
+
+        if condizione:
             id = mongo.db.Prova1.insert_one(
                 {
                 'user': user,
                 'informatica': informatica,
                 'matematica': matematica,
                 'arte': arte,
-                'latitude': latitude,
-                'longitude': longitude
+                "scienze" : scienze,
+                "storia": storia,
+                "tecnologia": tecnologia,
+                "musica" : musica,
+                "geografia"  : geografia,
+                "pri_inglese" : pri_inglese,
+                "sec_leng" : sec_leng
 
                 }
             )
@@ -51,8 +65,13 @@ class UsersApi(Resource):
                 'informatica': informatica,
                 'matematica': matematica,
                 'arte': arte,
-                'latitude': latitude,
-                'longitude': longitude
+                "scienze" : scienze,
+                "storia": storia,
+                "tecnologia": tecnologia,
+                "musica" : musica,
+                "geografia"  : geografia,
+                "pri_inglese" : pri_inglese,
+                "sec_leng" : sec_leng
             }
             return resp
         else:
@@ -71,13 +90,32 @@ class UsersRecommendation(Resource):
         informatica = request.json["informatica"]
         matematica = request.json["matematica"]
         arte = request.json["arte"]
-        if user and informatica and matematica and arte:
+        scienze = request.json["scienze"]
+        storia = request.json["storia"]
+        tecnologia = request.json["tecnologia"]
+        musica = request.json["musica"]
+        geografia = request.json["geografia"]
+        pri_inglese = request.json["pri_inglese"]
+        sec_leng = request.json["sec_leng"]
+
+        condizione = user and informatica and matematica and arte and scienze and storia and tecnologia and musica and geografia and pri_inglese and sec_leng
+
+        
+        if condizione:
             id = mongo.db.Prova1.insert_one(
                 {
                 'user': user,
                 'informatica': informatica,
                 'matematica': matematica,
                 'arte': arte,
+                "scienze" : scienze,
+                "storia": storia,
+                "tecnologia": tecnologia,
+                "musica" : musica,
+                "geografia"  : geografia,
+                "pri_inglese" : pri_inglese,
+                "sec_leng" : sec_leng
+
                 }
             )
             resp = {
@@ -85,7 +123,14 @@ class UsersRecommendation(Resource):
                 'user': user,
                 'informatica': informatica,
                 'matematica': matematica,
-                'arte': arte ,
+                'arte': arte,
+                "scienze" : scienze,
+                "storia": storia,
+                "tecnologia": tecnologia,
+                "musica" : musica,
+                "geografia"  : geografia,
+                "pri_inglese" : pri_inglese,
+                "sec_leng" : sec_leng
             }
             userdata = pd.DataFrame(data=resp, index=[0])
             result = mongo.db.tabella.find()

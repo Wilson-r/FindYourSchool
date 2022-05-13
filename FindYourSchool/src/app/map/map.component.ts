@@ -35,7 +35,7 @@ export class MapComponent implements AfterViewInit  {
   ngAfterViewInit(): void {
     this.getLocation();
     this.initMap();
-    this.markerService.makeCapitalMarkers(this.Mymap,this.longitude,this.latitude);
+    //this.markerService.makeCapitalMarkers(this.Mymap,this.longitude,this.latitude);
   }
   getLocation(){
     this.markerService.getPosition().then(resp => {
