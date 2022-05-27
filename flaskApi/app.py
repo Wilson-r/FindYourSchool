@@ -164,8 +164,8 @@ class SchoolsApi(Resource):
         return jsonify(points)
 
     def post(self):
-        longitude = float(request.json["longitude2"])
-        latitude = float(request.json["latitude2"])
+        longitude = request.json["longitude2"]
+        latitude = request.json["latitude2"]
         points = []
         mongo.db.GeoScuole.create_index( [("geometry", pymongo.GEOSPHERE )])
         result = mongo.db.GeoScuole.find(
@@ -173,7 +173,7 @@ class SchoolsApi(Resource):
                 'geometry':
                 { '$near':
                     {
-                        '$geometry': { 'type': "Point",  'coordinates': [longitude , latitude] },
+                        '$geometry': { 'type': "Point",  'coordinates': [latitude , longitude] },
                         '$maxDistance': 100000000000000
                     }
                 }
