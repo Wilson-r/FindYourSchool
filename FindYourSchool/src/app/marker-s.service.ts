@@ -14,15 +14,15 @@ export class MarkerSService {
   }
 
 
-  makeCapitalMarkers(Mymap: L.Map,longitude: any,latitude: any): void {
-    this.http.post<any>(AppSettings._API +"scuola/",{latitude,longitude}).subscribe(map((res: any) => {
+  makeCapitalMarkers(Mymap: L.Map): void {
+    this.http.get(AppSettings._API +"scuola").subscribe((res: any) => {
       for (const c of res) {
         const lon = c.geometry.coordinates[0];
         const lat = c.geometry.coordinates[1];
         const marker = L.marker([lat, lon]);
         marker.addTo(Mymap);
       }
-    }))
+    })
    }
    getPosition(): Promise<any>{
     return new Promise((resolve, reject)=> {
@@ -31,4 +31,14 @@ export class MarkerSService {
       })
     })
   }
+  makeCapitalMarkers1(Mymap: L.Map,lat : any, lon: any): void {
+    this.http.post<any>(AppSettings._API +"scuola", { longitude2: lat, latitude2 : lon}).subscribe((res: any) => {
+      for (const c of res) {
+        const lon = c.geometry.coordinates[0];
+        const lat = c.geometry.coordinates[1];
+        const marker = L.marker([lat, lon]);
+        marker.addTo(Mymap);
+      }
+    })
+   }
 }
