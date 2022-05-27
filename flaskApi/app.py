@@ -97,10 +97,7 @@ class UsersRecommendation(Resource):
         geografia = request.json["geografia"]
         pri_inglese = request.json["pri_inglese"]
         sec_leng = request.json["sec_leng"]
-        latitude = request.json['latitude']
-        longitude = request.json["longitude"]
-
-        condizione = user and informatica and matematica and arte and scienze and storia and tecnologia and musica and geografia and pri_inglese and sec_leng and latitude and longitude
+        condizione = user and informatica and matematica and arte and scienze and storia and tecnologia and musica and geografia and pri_inglese and sec_leng
 
         
         if condizione:
@@ -117,8 +114,6 @@ class UsersRecommendation(Resource):
                 "geografia"  : geografia,
                 "pri_inglese" : pri_inglese,
                 "sec_leng" : sec_leng,
-                "latitude" : latitude,
-                "longitude" : longitude
 
                 }
             )
@@ -135,8 +130,6 @@ class UsersRecommendation(Resource):
                 "geografia"  : geografia,
                 "pri_inglese" : pri_inglese,
                 "sec_leng" : sec_leng,
-                "latitude" : latitude,
-                "longitude" : longitude
             }
             userdata = pd.DataFrame(data=resp, index=[0])
             result = mongo.db.tabella.find()
