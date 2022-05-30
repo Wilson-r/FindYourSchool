@@ -10,15 +10,11 @@ def recommend(schoolProfile,userdata):
     genreTable = tab.set_index(tab['idScuola'])
     #And drop the unnecessary information
     #And drop the unnecessary information
-    genreTable = tab.drop('scuola', axis=1).drop('idScuola', axis=1).drop("orientation" , axis=1)
+    genreTable = tab.drop('idScuola', axis=1)
     recommendationTable_df = ((genreTable*userProfile).sum(axis=1))/(userProfile.sum())
     recommendationTable_df = recommendationTable_df.sort_values(ascending=False)
     #Just a peek at the values
     c = recommendationTable_df.index[0]
     #The final recommendation table
     df2 = tab[tab['idScuola'] == c].drop("_id" , axis=1)
-    result = {}
-    for index, row in df2.iterrows():
-        #result[index] = row.to_json() 
-        result[index] = dict(row)
-    return result
+    return df2["INDIRIZZO SCUOLASTICO"].to_list()[0]

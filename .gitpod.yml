@@ -11,5 +11,4 @@ ports:
     onOpen: open-browser
     visibility : public 
   - port: 5000
-    onOpen: open-browser
     visibility : public 

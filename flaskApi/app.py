@@ -132,7 +132,7 @@ class UsersRecommendation(Resource):
                 "sec_leng" : sec_leng,
             }
             userdata = pd.DataFrame(data=resp, index=[0])
-            result = mongo.db.tabella.find()
+            result = mongo.db.tabellaScuole.find()
             return rec.recommend(result,userdata)
 
 
