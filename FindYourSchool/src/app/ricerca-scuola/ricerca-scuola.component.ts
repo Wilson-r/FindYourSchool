@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Users } from '../users.model';
 import { UsersService } from '../users.service';
 import { first } from 'rxjs/operators';
+import { Recommendation } from '../recommendation.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ricerca-scuola',
@@ -14,8 +16,11 @@ export class RicercaScuolaComponent implements OnInit {
   newData: Object | undefined;
   longitude : number | undefined;
   latitude  :number | undefined;
-
   angForm: FormGroup;
+
+  obsRec: Observable<Recommendation[]> = undefined!
+  dati: Recommendation[] = undefined!
+  
   constructor(
     private router: Router,
     private fb : FormBuilder,
