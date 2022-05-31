@@ -26,7 +26,6 @@ export class MapComponent implements AfterViewInit  {
 
   tiles.addTo(this.Mymap);
 
-  L.marker([45.5373529,9.2657862]).addTo(this.Mymap)
 }
 
   constructor(private markerService: MarkerSService) { }
