@@ -37,7 +37,7 @@ export class MarkerSService {
         const lon = c.geometry.coordinates[0];
         const lat = c.geometry.coordinates[1];
         const marker = L.marker([lat, lon]);
-        marker.addTo(Mymap).bindPopup('Questa è la scuola .<br> piu vicina a te.');
+        marker.addTo(Mymap).bindPopup('Questa è la scuola <br> piu vicina a te, indipendentemente dal tipo <br> di scuola da noi consigliato.');
       
 
       }
