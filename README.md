@@ -1,5 +1,5 @@
 # ISTUZIONI PER L'AVVIO
-[I'm an inline-style link](https://www.gitpod.io#https://github.com/Wilson-r/FindYourSchool)
-1. sopo l'avvio della porta 4200 .
-2. sotto a destra dello schermo appare una finestra pop up.
-3. clicare su open in the browser 
+1. aprire la repository su [gitpod](https://www.gitpod.io#https://github.com/Wilson-r/FindYourSchool)
+2. dopo l'avvio della porta 4200 .
+3. sotto a destra dello schermo appare una finestra pop up.
+4. clicare su open in the browser 
