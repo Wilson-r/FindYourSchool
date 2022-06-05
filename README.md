@@ -1,15 +1,5 @@
-# FindYourSchool
-# Comandi Flask
-- pip install -r requirements.txt
-- flask run
-
-cd flaskApi && pip install -r requirements.txt && flask run
-
-# Comandi Angular
-- npm i -g @angular/cli
-- npm update
-- ng serve --disable-host-check
-- npm install leaflet@1.7.1
-- npm i --save-dev @types/leaflet`
-
-cd FindYourSchool && npm i -g @angular/cli && npm update && ng serve --disable-host-check
+# ISTUZIONI PER L'AVVIO
+[I'm an inline-style link](https://www.gitpod.io#https://github.com/Wilson-r/FindYourSchool)
+1. sopo l'avvio della porta 4200 .
+2. sotto a destra dello schermo appare una finestra pop up.
+3. clicare su open in the browser 
