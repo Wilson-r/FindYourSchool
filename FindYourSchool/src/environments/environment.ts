@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  _API : 'https://wilsonr-findyourschool-54guoodb9j2.ws-eu46.gitpod.io'
+  _API : '{APIURL}'
 };
 
 /*
