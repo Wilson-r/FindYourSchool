@@ -6,7 +6,6 @@ import { UsersService } from '../users.service';
 import { first } from 'rxjs/operators';
 import { Recommendation } from '../recommendation.model';
 import { Observable } from 'rxjs';
-
 @Component({
   selector: 'app-ricerca-scuola',
   templateUrl: './ricerca-scuola.component.html',

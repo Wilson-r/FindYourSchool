@@ -3,7 +3,7 @@ tasks:
   - name : FlaskWebServer
     init: cd flaskApi && pip install -r requirements.txt && flask run # runs during prebuild
   - name : AngWebServer
-    init: cd FindYourSchool && npm i -g @angular/cli && npm update && ng serve --disable-host-check # runs during prebuild
+    init: cd FindYourSchool && npm i -g @angular/cli && npm install replace-in-file --save-dev && npm update && ng serve --disable-host-check && node ./replace.build.js # runs during prebuild
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
